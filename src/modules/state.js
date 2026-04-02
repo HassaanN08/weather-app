@@ -14,8 +14,8 @@ const getLoadingState = () => {
     return loadingState;
 }
 
-const updateLoadingState = () => {
-    loadingState = !loadingState;
+const updateLoadingState = (boolean) => {
+    loadingState = boolean;
 }
 
 export { getState, updateState, getLoadingState, updateLoadingState };

@@ -7,10 +7,10 @@ import { parse, isToday, isTomorrow, format } from 'date-fns'
 const content = document.querySelector('#content');
 const asset = getAssets();
 
-const renderErrorMessage = () => {
+const renderErrorMessage = (string) => {
     content.innerHTML = "";
     const errorMessage = document.createElement('h1');
-    errorMessage.textContent = `Can't find location, try another one!`
+    errorMessage.textContent = string;
     content.append(errorMessage);
 }
 
@@ -55,7 +55,6 @@ const blockRender = (data, container) => {
 }
 
 const render = () => {
-    formHandler();
     content.innerHTML = "";
     const data = getState();
     const loading = getLoadingState();

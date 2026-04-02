@@ -14,11 +14,12 @@ const weatherData = async (location) => {
         return data;
     } catch(e) {
         console.error(e.message);
+        renderErrorMessage(`Can't connect to the server!`);
     }
 }
 
 const requiredData = async (location) => {
-    updateLoadingState();
+    updateLoadingState(true);
     render();
     try {
         const jsonData = await weatherData(location);
@@ -34,13 +35,11 @@ const requiredData = async (location) => {
         })
 
         updateState(requiredData);
-        updateLoadingState();
-        render();
     } catch(e) {
-        updateLoadingState();
-        renderErrorMessage();
+        renderErrorMessage(`Can't find location, try another one!`);
     } finally {
-        updateLoadingState();
+        updateLoadingState(false);
+        render();
     }
 }
 
