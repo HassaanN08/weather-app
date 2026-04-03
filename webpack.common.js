@@ -1,5 +1,5 @@
-import path from 'node:path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'node:path'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 export default {
     entry: './src/index.js',
@@ -10,23 +10,23 @@ export default {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/template.html'
-        })
+            template: './src/template.html',
+        }),
     ],
     module: {
         rules: [
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.html$/i,
-                use: ["html-loader"],
+                use: ['html-loader'],
             },
             {
                 test: /\.(png|svg|webp|jpeg|jpg|gif|ttf|otf|woff)$/i,
                 type: 'asset/resource',
-            }
-        ]
-    }
+            },
+        ],
+    },
 }

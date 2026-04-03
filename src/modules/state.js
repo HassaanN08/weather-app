@@ -1,21 +1,21 @@
-let state = {};
+let state = {}
 
 const getState = () => {
-    return state;
+    return state
 }
 
 const updateState = (newState) => {
-    state = {...state, ...newState};
+    state = { ...state, ...newState }
 }
 
-let loadingState = false;
+let loadingState = false
 
 const getLoadingState = () => {
-    return loadingState;
+    return loadingState
 }
 
 const updateLoadingState = (boolean) => {
-    loadingState = boolean;
+    loadingState = boolean
 }
 
-export { getState, updateState, getLoadingState, updateLoadingState };
+export { getState, updateState, getLoadingState, updateLoadingState }
